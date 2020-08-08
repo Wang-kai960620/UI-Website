@@ -1,7 +1,7 @@
 <template>
     <div id="app">
 
-        <g-collapse :selected.sync="selected"  collapse>
+        <g-collapse :selected.sync="selected" collapse>
             <g-collapse-item title="标题1" name="1" disable>内容1</g-collapse-item>
             <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
             <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
@@ -23,6 +23,7 @@
     loading1 = false;
     loading2 = false;
     loading3 = false;
+    selected = ["2"];
   }
 </script>
 

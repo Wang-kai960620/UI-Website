@@ -11,18 +11,24 @@
 <script lang="ts">
   import {Component, Prop, Vue} from "vue-property-decorator";
 
+  interface Close {
+    test: string;
+    callback: () => void;
+  }
+
   @Component
   export default class Toast extends Vue {
-    @Prop({type: Boolean, default: true}) autoClose!: boolean;
-    @Prop({type: Number, default: 5}) autoCloseTime!: number;
+    @Prop({type: Boolean, default: true}) autoClose?: boolean;
+    @Prop({type: Number, default: 5}) autoCloseTime?: number;
     @Prop({
-      type: Object, default: () => {
+      type: Object,
+      default: () => {
         return {
           test: "关闭",
-          callback: undefined
+          callback: Function
         };
       }
-    }) closeButton?: object;
+    }) closeButton?: Close;
 
     @Prop({
       type: String,
@@ -35,7 +41,7 @@
     }
 
     mounted() {
-      if (this.autoClose) {
+      if (this.autoClose && this.autoCloseTime) {
         setTimeout(() => {
           this.close();
         }, this.autoCloseTime * 1000);

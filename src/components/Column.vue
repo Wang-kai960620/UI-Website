@@ -5,17 +5,22 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop,Vue} from "vue-property-decorator";
+  import {Component, Prop, Vue} from "vue-property-decorator";
 
+
+  interface Obj {
+    span: string | number | undefined;
+    offset: string | number | undefined;
+  }
 
   @Component
   export default class Column extends Vue {
-    @Prop(String) span?: string | number ;
-    @Prop(String) offset?: string | number ;
-    @Prop(Object) ipad?: object ;
-    @Prop(Object) narrowPc?: object;
-    @Prop(Object) pc?: object;
-    @Prop(Object) widePc?: object;
+    @Prop(String) span?: string | number;
+    @Prop(String) offset?: string | number;
+    @Prop({type: Object}) ipad!: Obj;
+    @Prop(Object) narrowPc!: Obj;
+    @Prop(Object) pc!: Obj;
+    @Prop(Object) widePc!: Obj;
 
     gutter = 0;
 
@@ -38,7 +43,7 @@
       ];
     }
 
-    createClass(obj, str = "") {
+    createClass(obj: Obj, str = "") {
       if (!obj) {return [];}
       const array = [];
       if (obj.span) {array.push(`col-${str}${obj.span}`);}

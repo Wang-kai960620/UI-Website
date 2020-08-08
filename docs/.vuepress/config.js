@@ -22,7 +22,7 @@ module.exports = {
     title: "P-UI",
     description: "一个好用的UI框架",
     themeConfig: {
-        logo: "/assets/img/logo.png",
+        logo: "../public/favicon.ico",
         nav: [
             {text: "主页", link: "/"},
             {text: "文档", link: "/guide/"},

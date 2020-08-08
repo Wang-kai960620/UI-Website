@@ -11,13 +11,13 @@
 
   @Component
   export default class Button extends Vue {
-    @Prop(String) icon: string | undefined;
-    @Prop(Boolean) loading: boolean | undefined;
+    @Prop(String) icon?: string ;
+    @Prop(Boolean) loading?: boolean ;
     @Prop({
       type: String,
       default: "left",
       validator(value: "right" | "left"): boolean {return value === "left" || value === "right";}
-    }) iconPosition: string | undefined;
+    }) iconPosition?: string ;
   }
 </script>
 

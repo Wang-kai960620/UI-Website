@@ -20,9 +20,9 @@
     components: {Icon}
   })
   export default class CollapseItem extends Vue {
-    @Prop({type: String, required: true}) title: string | undefined;
-    @Prop({type: String}) name: string | undefined;
-    @Prop({type: Boolean, default: false}) disable: boolean | undefined;
+    @Prop({type: String, required: true}) title!: string ;
+    @Prop({type: String}) name!: string ;
+    @Prop({type: Boolean, default: false}) disable?: boolean;
     @Inject() eventbus!: Vue;
 
     show = false;

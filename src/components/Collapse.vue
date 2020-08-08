@@ -9,8 +9,8 @@
 
   @Component
   export default class Collapse extends Vue {
-    @Prop(Array) selected: [] | undefined;
-    @Prop({type: Boolean, default: false}) collapse: boolean | undefined;
+    @Prop(Array) selected!: [] ;
+    @Prop({type: Boolean, default: false}) collapse?: boolean ;
     @Provide() eventbus = new Vue();
 
     mounted() {

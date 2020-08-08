@@ -80,8 +80,8 @@
         },
       };
       if(this.position){
-        (contentWrapper as HTMLDivElement).style.left = positions[this.position].left + "px";
-        (contentWrapper as HTMLDivElement).style.top = positions[this.position].top + "px";
+        (contentWrapper as HTMLDivElement).style.left = positions.left+ "px";
+        (contentWrapper as HTMLDivElement).style.top = positions.top + "px";
       }
     }
 

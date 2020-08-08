@@ -1,11 +1,13 @@
 <template>
-    <div class="wrapper" :style="rowStyle()" :class="alignStyle()">
+    <div class="wrapper" :style="rowStyle" :class="alignStyle">
         <slot></slot>
     </div>
 </template>
 
 <script lang="ts">
   import {Component, Prop, Vue} from "vue-property-decorator";
+
+
 
 
   @Component

@@ -14,7 +14,7 @@
 
   @Component
   export default class TabHead extends Vue {
-    @Inject() eventbus!: object;
+    @Inject() eventbus!: Vue;
 
 
   }
