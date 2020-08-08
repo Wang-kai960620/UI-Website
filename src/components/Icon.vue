@@ -1,14 +1,18 @@
 <template>
     <svg class="icon">
-        <use :xlink:href="`#i-${name}`"/>
+        <use :xlink:href="'#'+name"/>
     </svg>
 </template>
 
 <script lang="ts">
-  import Vue from "vue";
-  import "./Svg.js";
+  const importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
+  try {
+    importAll((require.context("../assets/icon", true, /\.svg$/)));
+  } catch (error) {
+    console.log(error);
+  }
 
-  import {Component, Prop} from "vue-property-decorator";
+  import {Component, Prop, Vue} from "vue-property-decorator";
 
   @Component
   export default class Icon extends Vue {
