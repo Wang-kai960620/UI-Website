@@ -16,7 +16,7 @@
 
   @Component
   export default class Icon extends Vue {
-    @Prop(String) name?: string;
+    @Prop(String) name!: string;
   }
 </script>
 
@@ -24,7 +24,7 @@
     .icon {
         width: 1em;
         height: 1em;
-        fill: black;
+        fill:black;
         margin-right: 0.1em;
         margin-left: 0;
     }

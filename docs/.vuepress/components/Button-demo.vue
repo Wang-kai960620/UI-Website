@@ -16,21 +16,17 @@
   import Button from "../../../src/components/Button.vue";
   import ButtonGroup from "../../../src/components/Button-Group";
   import {Component, Vue} from "vue-property-decorator";
-  import Icon from "../../../src/components/Icon.vue";
 
   @Component({
     components: {
       "g-button": Button,
       "g-button-group": ButtonGroup,
-      "g-icon": Icon
-
     }
   })
   export default class ButtonDemo extends Vue {
     loading1 = false;
     loading2 = false;
     loading3 = false;
-
   };
 </script>
 

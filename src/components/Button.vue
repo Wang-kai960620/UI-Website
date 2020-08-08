@@ -7,17 +7,24 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop,Vue} from "vue-property-decorator";
+  import {Component, Prop, Vue} from "vue-property-decorator";
+  import Icon from "@/components/Icon.vue";
 
-  @Component
+
+  @Component({
+    components: {
+      "g-icon": Icon
+    }
+  })
   export default class Button extends Vue {
-    @Prop(String) icon?: string ;
-    @Prop(Boolean) loading?: boolean ;
+    @Prop(String) icon?: string;
+    @Prop(Boolean) loading?: boolean;
     @Prop({
       type: String,
       default: "left",
       validator(value: "right" | "left"): boolean {return value === "left" || value === "right";}
-    }) iconPosition?: string ;
+    }) iconPosition?: string;
+    name = "Button";
   }
 </script>
 
