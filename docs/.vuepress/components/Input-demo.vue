@@ -13,10 +13,12 @@
 <script lang="ts">
   import Input from "../../../src/components/Input";
   import {Component, Vue} from "vue-property-decorator";
+  import Icon from "../../../src/components/Icon.vue";
 
   @Component({
     components: {
-      "g-input": Input
+      "g-input": Input,
+      "g-icon": Icon
     }
   })
   export default class ButtonDemo extends Vue {

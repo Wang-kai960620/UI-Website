@@ -38,6 +38,7 @@ module.exports = {
                 children: [
                     "/guide/component/button",
                     "/guide/component/Input",
+                    "/guide/component/Collapse",
                 ],
             },
         ],

@@ -4,7 +4,7 @@
             <Icon name="right"></Icon>
             {{title}}
         </div>
-        <div class="content" v-if="show" :class="iconClass">
+        <div class="content" v-show="show" :class="iconClass">
             <div class="line">
                 <slot></slot>
             </div>
@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-  import {Component, Inject, Prop,Vue} from "vue-property-decorator";
+  import {Component, Inject, Prop, Vue} from "vue-property-decorator";
   import Icon from "./Icon.vue";
 
   @Component({
@@ -49,7 +49,7 @@
     }
 
   }
-  
+
 </script>
 
 <style lang="scss" scoped>

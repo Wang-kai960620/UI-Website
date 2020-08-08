@@ -13,8 +13,8 @@
 
   @Component
   export default class Toast extends Vue {
-    @Prop({type: Boolean, default: true}) autoClose?: boolean;
-    @Prop({type: Number, default: 5}) autoCloseTime?: number;
+    @Prop({type: Boolean, default: true}) autoClose!: boolean;
+    @Prop({type: Number, default: 5}) autoCloseTime!: number;
     @Prop({
       type: Object, default: () => {
         return {

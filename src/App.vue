@@ -1,5 +1,11 @@
 <template>
     <div id="app">
+
+        <g-collapse :selected.sync="selected"  collapse>
+            <g-collapse-item title="标题1" name="1" disable>内容1</g-collapse-item>
+            <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
+            <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
+        </g-collapse>
         <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
         <g-button icon="setting" :loading="!loading2" @click="loading2 = !loading2"> 按钮</g-button>
         <g-button icon-position="right" icon="setting" :loading="loading3" @click="loading3 = ! loading3">按钮</g-button>
