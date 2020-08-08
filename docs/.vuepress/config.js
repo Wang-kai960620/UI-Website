@@ -37,6 +37,7 @@ module.exports = {
                 title: "Components",
                 children: [
                     "/guide/component/button",
+                    "/guide/component/Input",
                 ],
             },
         ],
