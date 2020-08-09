@@ -20,7 +20,7 @@ module.exports = {
     ],
     base: "/Panda-UI/",
     title: "P-UI",
-    description: "一个好用的UI框架",
+    description: "一个极简的UI框架",
     themeConfig: {
         logo: "../public/favicon.ico",
         nav: [

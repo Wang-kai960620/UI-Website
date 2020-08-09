@@ -21,7 +21,7 @@
       "g-icon": Icon
     }
   })
-  export default class ButtonDemo extends Vue {
+  export default class InputDemo extends Vue {
     message = "显示内容";
   };
 </script>

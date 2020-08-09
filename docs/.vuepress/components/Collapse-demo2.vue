@@ -1,9 +1,9 @@
 <template>
     <div>
-        <g-collapse :selected.sync="selected" collapse>
-            <g-collapse-item title="标题1" name="1" disable>内容1</g-collapse-item>
+        <g-collapse :selected.sync="selected">
+            <g-collapse-item title="标题1" name="1">内容1</g-collapse-item>
             <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
-            <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
+            <g-collapse-item title="标题3" name="3" disable>内容3</g-collapse-item>
         </g-collapse>
         <div class="wrapper" @click="show = !show">
             <div class="text">点击展开代码</div>
@@ -27,16 +27,16 @@
       "g-collapse-item": CollapseItem
     }
   })
-  export default class CollapseDemo extends Vue {
+  export default class CollapseDemo2 extends Vue {
     show = false;
+    selected = [];
     content = `
-       <g-collapse :selected.sync="selected" collapse>
-            <g-collapse-item title="标题1" name="1" disable>内容1</g-collapse-item>
+    <g-collapse :selected.sync="selected">
+            <g-collapse-item title="标题1" name="1">内容1</g-collapse-item>
             <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
-            <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
+            <g-collapse-item title="标题3" name="3" disable>内容3</g-collapse-item>
         </g-collapse>
     `;
-    selected = [];
   };
 </script>
 

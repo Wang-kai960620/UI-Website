@@ -9,27 +9,19 @@ features:
 
 footer: MIT Licensed | Copyright © 2019-present FeiHong
 ---
-<Button-demo></Button-demo>
 ### 安装指南
 ```bash
-# clone item
-git clone git@github.com:Wang-kai960620/Panda-UI.git
+## Project setup
+yarn install
 
-# install dependencies
-npm install
+### Compiles and hot-reloads for development
+yarn serve
+~~~
+### Compiles and minifies for production
+yarn build
 
-# serve with hot reload at localhost:6666
-npm run dev
-
-# build for production with minification
-npm run build
-
-# deploy to github page
-npm run d
-
-# build&&pm2
-npm run server
-
+### Lints and fixes files
+yarn lint
 
 请联系作者获得授权，非商业转载请注明出处。
 ```
