@@ -1,24 +1,25 @@
 <template>
     <div>
-        <g-popover>
+
+        <g-popover trigger="hover">
             <g-button>上方弹出</g-button>
             <template slot="content">
                 弹出内容
             </template>
         </g-popover>
-        <g-popover position="bottom">
+        <g-popover position="bottom" trigger="hover">
             <g-button>下方弹出</g-button>
             <template slot="content">
                 弹出内容
             </template>
         </g-popover>
-        <g-popover position="left">
+        <g-popover position="left" trigger="hover">
             <g-button>左边弹出</g-button>
             <template slot="content">
                 弹出内容
             </template>
         </g-popover>
-        <g-popover position="right">
+        <g-popover position="right" trigger="hover">
             <g-button>右边弹出</g-button>
             <template slot="content">
                 弹出内容
@@ -47,36 +48,34 @@
       "g-button": Button,
     }
   })
-  export default class PopoverDemo extends Vue {
+  export default class PopoverDemo1 extends Vue {
     show = false;
-    selected = [];
     content = `
-       <g-popover>
+     <g-popover trigger="hover">
             <g-button>上方弹出</g-button>
             <template slot="content">
                 弹出内容
             </template>
         </g-popover>
-        <g-popover position="bottom">
+        <g-popover position="bottom" trigger="hover">
             <g-button>下方弹出</g-button>
             <template slot="content">
                 弹出内容
             </template>
         </g-popover>
-        <g-popover position="left">
+        <g-popover position="left" trigger="hover">
             <g-button>左边弹出</g-button>
             <template slot="content">
                 弹出内容
             </template>
         </g-popover>
-        <g-popover position="right">
+        <g-popover position="right" trigger="hover">
             <g-button>右边弹出</g-button>
             <template slot="content">
                 弹出内容
             </template>
-        </g-popover>
-        `;
-    name: "Popover-demo";
+        </g-popover>`;
+    name: "Popover-demo1";
   };
 </script>
 
@@ -100,5 +99,4 @@
             transform: translateY(-100%);
         }
     }
-
 </style>
