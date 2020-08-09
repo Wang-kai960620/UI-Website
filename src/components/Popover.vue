@@ -182,16 +182,17 @@
         display: inline-block;
         vertical-align: top;
         position: relative;
+        background-clip: padding-box
     }
 
     .content-wrapper {
         position: absolute;
         border: 1px solid $border-color;
+        box-shadow:  0 2px 8px rgba(0,0,0,.15);
         border-radius: 4px;
-        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
-        background: white;
         padding: .5em 1em;
         max-width: 20em;
+        background-color: #fff;
         word-break: break-all;
 
         &::before, &::after {
@@ -212,11 +213,10 @@
             }
 
             &::before {
-                border-top-color: black;
+                border-top-color: #d9d9d9;
                 border-bottom: none;
                 top: 100%;
             }
-
             &::after {
                 border-top-color: white;
                 border-bottom: none;
@@ -233,10 +233,9 @@
 
             &::before {
                 border-top: none;
-                border-bottom-color: black;
+                border-bottom-color: #d9d9d9;
                 bottom: 100%;
             }
-
             &::after {
                 border-top: none;
                 border-bottom-color: white;
@@ -254,11 +253,10 @@
             }
 
             &::before {
-                border-left-color: black;
+                border-left-color: #d9d9d9;
                 border-right: none;
                 left: 100%;
             }
-
             &::after {
                 border-left-color: white;
                 border-right: none;
@@ -275,12 +273,14 @@
             }
 
             &::before {
-                border-right-color: black;
+                border-right-color: #d9d9d9;
+                border-left: none;
                 border-left: none;
                 right: 100%;
             }
 
             &::after {
+                border-left: none;
                 border-right-color: white;
                 border-left: none;
                 right: calc(100% - 1px);

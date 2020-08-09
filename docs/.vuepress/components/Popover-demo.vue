@@ -1,21 +1,41 @@
 <template>
     <div>
         <g-popover>
+            <g-button>上方弹出</g-button>
             <template slot="content">
-                这里是popover组件内容
+                弹出内容
             </template>
-            <button>点我</button>
+        </g-popover>
+        <g-popover position="bottom">
+            <g-button>下方弹出</g-button>
+            <template slot="content">
+                弹出内容
+            </template>
+        </g-popover>
+        <g-popover position="left">
+            <g-button>左边弹出</g-button>
+            <template slot="content">
+                弹出内容
+            </template>
+        </g-popover>
+        <g-popover position="right">
+            <g-button>右边弹出</g-button>
+            <template slot="content">
+                弹出内容
+            </template>
         </g-popover>
     </div>
 </template>
 
 <script lang="ts">
   import {Component, Vue} from "vue-property-decorator";
+  import Button from '../../../src/components/Button.vue'
   import Popover from "../../../src/components/Popover.vue";
 
   @Component({
     components: {
-      "g-popover": Popover
+      "g-popover": Popover,
+      "g-button": Button,
     }
   })
   export default class PopoverDemo extends Vue {
