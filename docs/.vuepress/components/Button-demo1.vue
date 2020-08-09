@@ -1,9 +1,9 @@
 <template>
     <div>
-        <g-button>默认按钮</g-button>
-        <g-button :loading="true">默认按钮</g-button>
-        <g-button icon="setting">默认按钮</g-button>
-        <g-button icon-position="right" icon="setting">默认按钮</g-button>
+        <g-button :loading="loading1" @click="loading1 = !loading1">默认按钮</g-button>
+        <g-button icon="setting" :loading="!loading2" @click="loading2 = !loading2">默认按钮</g-button>
+        <g-button icon-position="right" icon="setting" :loading="loading3" @click="loading3 = ! loading3">默认按钮
+        </g-button>
         <div class="wrapper" @click="show = !show">
             <div class="text">点击展开代码</div>
             <transition name="fade">
@@ -24,14 +24,22 @@
       "g-button": Button,
     }
   })
-  export default class ButtonDemo extends Vue {
+  export default class ButtonDemo1 extends Vue {
     show = false;
     content = `
-   <g-button>默认按钮</g-button>
-   <g-button :loading="true">默认按钮</g-button>
-   <g-button icon="setting">默认按钮</g-button>
-   <g-button icon-position="right" icon="setting">默认按钮</g-button>
+       <g-button :loading="loading1" @click="loading1 = !loading1">
+        默认按钮
+       </g-button>
+       <g-button icon="setting" :loading="!loading2" @click="loading2 = !loading2">
+        默认按钮
+       </g-button>
+       <g-button icon-position="right" icon="setting" :loading="loading3" @click="loading3 = ! loading3">
+        可以切换按钮
+       </g-button>
     `;
+    loading1 = false;
+    loading2 = false;
+    loading3 = false;
   };
 </script>
 

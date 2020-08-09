@@ -1,9 +1,10 @@
 <template>
     <div>
-        <g-button>默认按钮</g-button>
-        <g-button :loading="true">默认按钮</g-button>
-        <g-button icon="setting">默认按钮</g-button>
-        <g-button icon-position="right" icon="setting">默认按钮</g-button>
+        <g-button-group>
+            <g-button icon="left">上一页</g-button>
+            <g-button>更多</g-button>
+            <g-button icon="right" icon-position="right">下一页</g-button>
+        </g-button-group>
         <div class="wrapper" @click="show = !show">
             <div class="text">点击展开代码</div>
             <transition name="fade">
@@ -18,20 +19,24 @@
 <script lang="ts">
   import Button from "../../../src/components/Button.vue";
   import {Component, Vue} from "vue-property-decorator";
+  import ButtonGroup from "../../../src/components/Button-Group.vue";
 
   @Component({
     components: {
       "g-button": Button,
+      'g-button-group':ButtonGroup
     }
   })
-  export default class ButtonDemo extends Vue {
+  export default class ButtonDemo2 extends Vue {
     show = false;
     content = `
-   <g-button>默认按钮</g-button>
-   <g-button :loading="true">默认按钮</g-button>
-   <g-button icon="setting">默认按钮</g-button>
-   <g-button icon-position="right" icon="setting">默认按钮</g-button>
+        <g-button-group>
+            <g-button icon="left">上一页</g-button>
+            <g-button>更多</g-button>
+            <g-button icon="right" icon-position="right">下一页</g-button>
+        </g-button-group>
     `;
+
   };
 </script>
 
