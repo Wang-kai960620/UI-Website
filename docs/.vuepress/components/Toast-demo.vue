@@ -1,19 +1,18 @@
 <template>
     <div>
-        <h2>this.$toast</h2>
-        <g-button @click="$toast('点击弹出提示')">上方弹出</g-button>
-        <g-button @click="$toast('点击弹出提示', {position:'middle'})">中间弹出</g-button>
-        <g-button @click="$toast('点击弹出提示', {position:'bottom'})">下方弹出</g-button>
+<!--        <h2>{{this.$toast}}</h2>-->
+<!--        <g-button @click="this.$toast('点击弹出提示')">上方弹出</g-button>-->
+<!--        <g-button @click="this.$toast('点击弹出提示', {position:'middle'})">中间弹出</g-button>-->
+<!--        <g-button @click="this.$toast('点击弹出提示', {position:'bottom'})">下方弹出</g-button>-->
     </div>
 </template>
 
 <script lang="ts">
   import {Component, Vue} from "vue-property-decorator";
-  import GButton from "../../../src/components/Button.vue";
-  // import Toast from "../../../src/components/Toast.vue";
   import plugin from "../../../src/components/plugin";
+  import GButton from "../../../src/components/Button.vue";
 
-  Vue.use(plugin);
+  // Vue.use(plugin);
   @Component({
     components: {
       "g-button": GButton,

@@ -8,12 +8,14 @@
   import {Component, Prop, Vue} from "vue-property-decorator";
 
 
-
-
   @Component
   export default class Row extends Vue {
     @Prop(String) gutter?: string | number;
-    @Prop(String) stay?: string | number;
+    @Prop({
+      type: String, validator(value: string): boolean {
+        return ["left", "right", "center"].indexOf(value) >= 0;
+      }
+    }) stay?: string | number;
 
     mounted() {
       this.$children.forEach(vm => {
@@ -21,14 +23,14 @@
       });
     }
 
-    alignStyle() {
+    get alignStyle() {
       const {stay} = this;
       return [
         stay && `align-${stay}`
       ];
     }
 
-    rowStyle() {
+    get rowStyle() {
       const {gutter} = this;
       if (gutter) {
         return {
@@ -41,7 +43,6 @@
 
 <style lang="scss" scoped>
     .wrapper {
-        height: 32px;
         display: flex;
         flex-wrap: wrap;
 

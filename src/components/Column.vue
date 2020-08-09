@@ -9,8 +9,8 @@
 
 
   interface Obj {
-    span: string | number | undefined;
-    offset: string | number | undefined;
+    span?: string | number;
+    offset?: string | number;
   }
 
   @Component
@@ -56,7 +56,6 @@
 
 <style lang="scss" scoped>
     .wrapper {
-        width: 50%;
         $class-prefix: col-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
