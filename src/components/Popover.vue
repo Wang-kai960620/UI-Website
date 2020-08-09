@@ -11,38 +11,50 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop,Vue} from "vue-property-decorator";
+  import {Component, Prop, Vue} from "vue-property-decorator";
+
+  interface Positions {
+    top: {
+      top: string | number
+      left: string | number
+    }
+    bottom: {
+      top: string | number
+      left: string | number
+    }
+    left: {
+      top: string | number
+      left: string | number
+    },
+    right: {
+      top: string | number
+      left: string | number
+    },
+  }
 
   @Component
   export default class Popover extends Vue {
     @Prop({
       type: String,
       default: "top",
-      validator(value: string): boolean { return ["click", "hover"].indexOf(value) >= 0; }
-    }) position?: string;
+      validator(value: string): boolean { return ["top", "bottom", "left", "right"].indexOf(value) >= 0; }
+    }) position?: "top" | "bottom" | "left" | "right";
     @Prop({
       type: String,
       default: "click",
       validator(value: string): boolean {return ["click", "hover"].indexOf(value) >= 0;}
     }) trigger?: string;
+
+    @Prop(Element) container?: HTMLDivElement;
     visible = false;
 
     mounted() {
-      if (this.trigger === "click") {
-        (this.$refs.popover as HTMLDivElement).addEventListener("click", this.onClick);
-      } else {
-        (this.$refs.popover as HTMLDivElement).addEventListener("mouseenter", this.open);
-        (this.$refs.popover as HTMLDivElement).addEventListener("mouseleave", this.close);
-      }
+      this.addPopoverListeners();
     }
 
     destroyed() {
-      if (this.trigger === "click") {
-        (this.$refs.popover as HTMLDivElement).removeEventListener("click", this.onClick);
-      } else {
-        (this.$refs.popover as HTMLDivElement).removeEventListener("mouseenter", this.open);
-        (this.$refs.popover as HTMLDivElement).removeEventListener("mouseleave", this.close);
-      }
+      this.putBackContent();
+      this.removePopoverListeners();
     }
 
     get openEvent() {
@@ -62,12 +74,41 @@
     }
 
 
+    addPopoverListeners() {
+      const popover = this.$refs.popover as HTMLDivElement;
+
+      if (this.trigger === "click") {
+        popover.addEventListener("click", this.onClick);
+      } else {
+        popover.addEventListener("mouseenter", this.open);
+        popover.addEventListener("mouseleave", this.close);
+      }
+    }
+
+    removePopoverListeners() {
+      const popover = this.$refs.popover as HTMLDivElement;
+
+      if (this.trigger === "click") {
+        popover.removeEventListener("click", this.onClick);
+      } else {
+        popover.removeEventListener("mouseenter", this.open);
+        popover.removeEventListener("mouseleave", this.close);
+      }
+    }
+
+    putBackContent() {
+      const {contentWrapper, popover} = this.$refs;
+      if (!contentWrapper) {return;}
+      (popover as HTMLDivElement).appendChild(contentWrapper as HTMLDivElement);
+    }
+
     positionContent() {
-      const {contentWrapper, triggerWrapper} = this.$refs;
-      document.body.appendChild(contentWrapper as HTMLDivElement);
-      const {width, height, top, left} = (triggerWrapper as HTMLDivElement).getBoundingClientRect();
-      const {height: height2} = (contentWrapper as HTMLDivElement).getBoundingClientRect();
-      const positions = {
+      const contentWrapper = this.$refs.contentWrapper as HTMLDivElement;
+      const triggerWrapper = this.$refs.triggerWrapper as HTMLDivElement;
+      (this.container || document.body).appendChild(contentWrapper);
+      const {width, height, top, left} = triggerWrapper.getBoundingClientRect();
+      const {height: height2} = contentWrapper.getBoundingClientRect();
+      let positions: Positions = {
         top: {top: top + window.scrollY, left: left + window.scrollX,},
         bottom: {top: top + height + window.scrollY, left: left + window.scrollX},
         left: {
@@ -79,24 +120,38 @@
           left: left + window.scrollX + width
         },
       };
-      if(this.position){
-        (contentWrapper as HTMLDivElement).style.left = positions.left+ "px";
-        (contentWrapper as HTMLDivElement).style.top = positions.top + "px";
+      if (this.position === "right") {
+        contentWrapper.style.left = positions[this.position].left + "px";
+        contentWrapper.style.top = positions[this.position].top + "px";
+      } else if (this.position === "left") {
+        contentWrapper.style.left = positions[this.position].left + "px";
+        contentWrapper.style.top = positions[this.position].top + "px";
+
+      } else if (this.position === "top") {
+        contentWrapper.style.left = positions[this.position].left + "px";
+        contentWrapper.style.top = positions[this.position].top + "px";
+      } else if (this.position === "bottom") {
+        contentWrapper.style.left = positions[this.position].left + "px";
+        contentWrapper.style.top = positions[this.position].top + "px";
       }
     }
 
-    onClickDocument(e: MouseEvent) {
+
+    onClickDocument(e: any) {
+      const popover = this.$refs.popover as HTMLDivElement;
+      const contentWrapper = this.$refs.contentWrapper as HTMLDivElement;
       if (this.$refs.popover &&
-        (this.$refs.popover === e.target || (this.$refs.popover as HTMLDivElement).contains(e.target as HTMLDivElement))
+        (this.$refs.popover === e.target || popover.contains(e.target))
       ) { return; }
       if (this.$refs.contentWrapper &&
-        (this.$refs.contentWrapper === e.target || (this.$refs.contentWrapper as HTMLDivElement).contains(e.target as HTMLDivElement))
+        (this.$refs.contentWrapper === e.target || contentWrapper.contains(e.target))
       ) { return; }
       this.close();
     }
 
     open() {
       this.visible = true;
+      this.$emit("open");
       this.$nextTick(() => {
         this.positionContent();
         document.addEventListener("click", this.onClickDocument);
@@ -105,11 +160,12 @@
 
     close() {
       this.visible = false;
+      this.$emit("close");
       document.removeEventListener("click", this.onClickDocument);
     }
 
-    onClick(event: MouseEvent) {
-      if ((this.$refs.triggerWrapper as HTMLDivElement).contains(event.target as HTMLDivElement)) {
+    onClick(event: any) {
+      if ((this.$refs.triggerWrapper as HTMLDivElement).contains(event.target)) {
         if (this.visible) {
           this.close();
         } else {
@@ -117,7 +173,6 @@
         }
       }
     }
-
   }
 </script>
 

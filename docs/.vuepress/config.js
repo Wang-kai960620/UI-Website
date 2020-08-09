@@ -41,6 +41,7 @@ module.exports = {
                     "/guide/component/Collapse",
                     "/guide/component/Column",
                     "/guide/component/Toast",
+                    "/guide/component/Popover",
                 ],
             },
         ],

@@ -1,6 +1,29 @@
 <template>
     <div id="app">
-
+        <g-popover>
+            <g-button>上方弹出</g-button>
+            <template slot="content">
+                弹出内容
+            </template>
+        </g-popover>
+        <g-popover position="bottom">
+            <g-button>下方弹出</g-button>
+            <template slot="content">
+                弹出内容
+            </template>
+        </g-popover>
+        <g-popover position="left">
+            <g-button>左边弹出</g-button>
+            <template slot="content">
+                弹出内容
+            </template>
+        </g-popover>
+        <g-popover position="right">
+            <g-button>右边弹出</g-button>
+            <template slot="content">
+                弹出内容
+            </template>
+        </g-popover>
         <g-collapse :selected.sync="selected" collapse>
             <g-collapse-item title="标题1" name="1" disable>内容1</g-collapse-item>
             <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
