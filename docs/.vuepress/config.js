@@ -39,6 +39,8 @@ module.exports = {
                     "/guide/component/button",
                     "/guide/component/Input",
                     "/guide/component/Collapse",
+                    "/guide/component/Column",
+                    "/guide/component/Toast",
                 ],
             },
         ],
