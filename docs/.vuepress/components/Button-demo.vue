@@ -1,7 +1,9 @@
 <template>
     <div>
         <g-button>默认按钮</g-button>
-        <g-button :loading="true">默认按钮</g-button>
+        <g-button style="background: #666666">默认按钮</g-button>
+        <g-button style="background: white;color:black; border:1px dashed black">默认按钮</g-button>
+        <g-button style="background: red;">Dangerous</g-button>
         <g-button icon="setting">默认按钮</g-button>
         <g-button icon-position="right" icon="setting">默认按钮</g-button>
         <div class="wrapper" @click="show = !show">
@@ -27,10 +29,12 @@
   export default class ButtonDemo extends Vue {
     show = false;
     content = `
-   <g-button>默认按钮</g-button>
-   <g-button :loading="true">默认按钮</g-button>
-   <g-button icon="setting">默认按钮</g-button>
-   <g-button icon-position="right" icon="setting">默认按钮</g-button>
+        <g-button>默认按钮</g-button>
+        <g-button style="background: #666666">默认按钮</g-button>
+        <g-button style="background: white;color:black; border:1px dashed black">默认按钮</g-button>
+        <g-button style="background: red;">Dangerous</g-button>
+        <g-button icon="setting">默认按钮</g-button>
+        <g-button icon-position="right" icon="setting">默认按钮</g-button>
     `;
   };
 </script>
