@@ -6,7 +6,9 @@
 
 ## 普通输入框
 
+<ClientOnly>
 <Input-demo></Input-demo>
+</ClientOnly>
 
 ## 状态提示输入框
 输入readonly,disable 属性，展示输入框的状态

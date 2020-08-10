@@ -18,7 +18,7 @@ module.exports = {
             },
         }],
     ],
-    base: "/Panda-UI/",
+    base: "/UI-Website/",
     title: "P-UI",
     description: "一个极简的UI框架",
     themeConfig: {
