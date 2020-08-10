@@ -40,9 +40,9 @@
 <style lang="scss" scoped>
     .tab-item {
         flex-shrink: 0;
-        margin: 0 .1em;
+        margin: 5px .1em;
         display: flex;
-        border-radius: 4px 4px 0 0;
+        border-radius: 4px ;
         justify-content: center;
         align-items: center;
         border: .5px solid #ccc;

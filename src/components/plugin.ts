@@ -1,8 +1,8 @@
 import Toast from "./Toast.vue";
-import {Vue} from "vue/types/vue";
+import Vue from "vue-property-decorator";
 
-// @ts-ignore
-function creatToast({Vue, message, propsData, onClose}) {
+function creatToast({Vue, message, propsData, onClose}: { Vue: Vue, message: string, propsData: any, onClose: () => void }) {
+  // @ts-ignore
   const constructor = Vue.extend(Toast);
   const toast = new constructor({propsData});
   toast.$slots.default = [message];
@@ -15,8 +15,8 @@ function creatToast({Vue, message, propsData, onClose}) {
 let currentToast: { close: () => void; } | null;
 export default {
   install: (
+    Vue: Vue, options?: any) => {
     // @ts-ignore
-    Vue: typeof Vue, options?: any) => {
     Vue.prototype.$toast = function (message: string, props?: any) {
       if (currentToast) {
         currentToast.close();

@@ -25,7 +25,7 @@
       default: () => {
         return {
           test: "关闭",
-          callback: Function
+          callback:Function
         };
       }
     }) closeButton?: Close;
