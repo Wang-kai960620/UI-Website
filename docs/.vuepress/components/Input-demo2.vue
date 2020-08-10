@@ -1,6 +1,8 @@
 <template>
     <div>
-        <g-input value="请在这里输入内容"></g-input>
+        <g-input value="不可选中修改的" disable></g-input>
+        <g-input value="只读的" readonly></g-input>
+        <g-input value="差一个" error="输入的字符长度有错"></g-input>
         <div class="wrapper" @click="show = !show">
             <div class="text">点击展开代码</div>
             <transition name="fade">
@@ -13,21 +15,22 @@
 </template>
 
 <script lang="ts">
-  import Input from "../../../src/components/Input";
   import {Component, Vue} from "vue-property-decorator";
-  import Icon from "../../../src/components/Icon.vue";
+  import Input from "../../../src/components/Input.vue";
 
   @Component({
     components: {
-      "g-input": Input,
-      "g-icon": Icon
+      "g-input": Input
     }
   })
-  export default class InputDemo extends Vue {
+  export default class InputDemo1 extends Vue {
     show = false;
     content = `
-        <g-input valuse="请在这里输入内容"></g-input>
-`;
+        <g-input value="不可选中修改的" disabled ></g-input>
+        <g-input value="只读的" readonly></g-input>
+        <g-input value="差一个" error="输入的字符长度有错"></g-input>
+    `;
+    name: "Input-demo1";
   };
 </script>
 
@@ -51,5 +54,4 @@
             transform: translateY(-100%);
         }
     }
-
 </style>
