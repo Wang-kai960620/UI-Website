@@ -1,27 +1,21 @@
 ---
 home: true
-heroImage: /logo-computed.gif
 actionText: get start
 actionLink: /guide/
 features:
-  - title: 比尔·盖茨经典语录/名句
-    details: 只要有坚强的持久心，一个庸俗平凡的人也会有成功的一天，否则即使是一个才识卓越的人，也只能遭遇失败的命运。
-
-footer: MIT Licensed | Copyright © 2019-present FeiHong
+- title: 简洁至上
+  details: 一款极简的UI框架，使用简单，
+- title: Vue驱动
+  details: 全部使用 Vue 组件，配置简单，
+- title: 孙忠山先生
+  details: 余致力国民革命，凡四十年，其目的在求中国之自由平等。积四十年之经验，深知欲达到此目的，必须唤起民众及联合世界上以平等待我之民族，共同奋斗。
+footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
+
+
 ### 安装指南
 ```bash
-## Project setup
-yarn install
-
-### Compiles and hot-reloads for development
-yarn serve
-~~~
-### Compiles and minifies for production
-yarn build
-
-### Lints and fixes files
-yarn lint
-
-请联系作者获得授权，非商业转载请注明出处。
+  npm install panda-20200806
+  OR
+  yarn add panda-20200806
 ```

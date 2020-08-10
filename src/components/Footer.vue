@@ -13,7 +13,12 @@
 
 <style lang="scss" scoped>
     .footer {
-        height: 50px;
-        background: #666;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        height: 64px;
+        background: #7dbcea;
     }
 </style>

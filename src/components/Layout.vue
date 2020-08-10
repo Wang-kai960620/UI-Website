@@ -14,7 +14,6 @@
     mounted() {
       this.$children.map(vm => {
         if (vm.$options.name === "Sider") {
-          console.log(this.$el);
           this.$el.className = "hasSider layout";
           return this.isHasSider = true;
         }
@@ -27,9 +26,8 @@
     .layout {
         flex-grow: 1;
         display: flex;
-        height: 100vh;
+        height: 50vh;
         flex-direction: column;
-        border: 1px solid red;
 
         &.hasSider {
             flex-direction: row;

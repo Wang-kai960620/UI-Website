@@ -13,6 +13,12 @@
 
 <style lang="scss" scoped>
     .sider {
-        background: grey;
+        color: white;
+        width: 120px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #3ba0e9;
     }
 </style>

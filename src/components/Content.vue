@@ -13,7 +13,12 @@
 
 <style lang="scss" scoped>
     .content {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
         flex-grow: 1;
-        background: #333;
+        background:#108ee9;
     }
 </style>

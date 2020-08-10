@@ -22,7 +22,6 @@ module.exports = {
     title: "P-UI",
     description: "一个极简的UI框架",
     themeConfig: {
-        logo: "../public/favicon.ico",
         nav: [
             {text: "主页", link: "/"},
             {text: "文档", link: "/guide/"},
@@ -31,7 +30,10 @@ module.exports = {
         sidebar: [
             {
                 title: "快速上手",
-                children: ["/guide/install/"],
+                children: [
+                    "/guide/install/Add",
+                    "/guide/install/Hello",
+                ],
             },
             {
                 title: "Components",
@@ -40,9 +42,10 @@ module.exports = {
                     "/guide/component/Input",
                     "/guide/component/Collapse",
                     "/guide/component/Column",
-                    "/guide/component/Toast",
+                    // "/guide/component/Toast",
                     "/guide/component/Popover",
                     "/guide/component/Tab",
+                    "/guide/component/Layout",
                 ],
             },
         ],

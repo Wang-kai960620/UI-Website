@@ -14,7 +14,12 @@
 
 <style lang="scss" scoped>
     .header {
-        height: 50px;
-        background: blue;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        height: 64px;
+        background: #7dbcea;
     }
 </style>
