@@ -1,23 +1,19 @@
 <template>
-    <div class="layout" :class="isHasSider">
+    <div class="layout" :class="has">
         <slot></slot>
     </div>
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from "vue-property-decorator";
+  import {Component, Prop, Vue} from "vue-property-decorator";
 
   @Component
   export default class Layout extends Vue {
-    isHasSider = false;
-
-    mounted() {
-      this.$children.map(vm => {
-        if (vm.$options.name === "Sider") {
-          this.$el.className = "hasSider layout";
-          return this.isHasSider = true;
-        }
-      });
+    @Prop({type: Boolean, default: false}) hasSider ?: boolean;
+    get has(){
+      return {
+        hasSider:this.hasSider
+      }
     }
   }
 </script>

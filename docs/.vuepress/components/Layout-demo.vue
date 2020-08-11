@@ -12,7 +12,7 @@
         <div style="margin:20px 0">
             <g-layout>
                 <g-header>header</g-header>
-                <g-layout>
+                <g-layout has-sider>
                     <g-sider>sider</g-sider>
                     <g-content>content</g-content>
                 </g-layout>
@@ -21,8 +21,8 @@
         </div>
         <div style="margin:100px 0">
             <g-layout>
-                <g-header style="height: 64px">header</g-header>
-                <g-layout>
+                <g-header >header</g-header>
+                <g-layout has-sider>
                     <g-content>content</g-content>
                     <g-sider>sider</g-sider>
                 </g-layout>
@@ -70,7 +70,7 @@
 
             <g-layout>
                 <g-header>header</g-header>
-                <g-layout>
+                <g-layout hasSider>
                     <g-sider>sider</g-sider>
                     <g-content>content</g-content>
                 </g-layout>
@@ -79,7 +79,7 @@
 
             <g-layout>
                 <g-header >header</g-header>
-                <g-layout>
+                <g-layout hasSider>
                     <g-content>content</g-content>
                     <g-sider>sider</g-sider>
                 </g-layout>
