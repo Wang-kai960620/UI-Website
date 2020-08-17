@@ -50,44 +50,6 @@
             </g-col>
         </g-row>
 
-        <g-row class="demoRow">
-            <g-col span="2">
-                <div class="demoCol" style="background: #f5f5f5;color: black">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #49b9ed;color: white">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #f5f5f5;color: black">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #49b9ed;color: white">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #f5f5f5;color: black">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #49b9ed;color: white">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #f5f5f5;color: black">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #49b9ed;color: white">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #f5f5f5;color: black">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #49b9ed;color: white">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #f5f5f5;color: black">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol" style="background: #49b9ed;color: white">8.333%</div>
-            </g-col>
-        </g-row>
         <div class="codeWrapper" @click="show = !show">
             <div class="text">点击展开代码</div>
             <transition name="fade">
@@ -163,44 +125,6 @@
             </g-col>
         </g-row>
 
-        <g-row class="demoRow">
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-            <g-col span="2">
-                <div class="demoCol">8.333%</div>
-            </g-col>
-        </g-row>
     `
   };
 </script>

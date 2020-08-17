@@ -28,32 +28,6 @@
                     <div class="demoCol" style="background: #f5f5f5;color: black">16.6%</div>
                 </g-col>
             </g-row>
-            <g-row class="demoRow" gutter="10">
-                <g-col span="2">
-                    <div class="demoCol" style="background: #49b9ed;color: white">8.33%</div>
-                </g-col>
-                <g-col span="2" offset="2">
-                    <div class="demoCol" style="background: #f5f5f5;color: black">8.33%</div>
-                </g-col>
-                <g-col span="2">
-                    <div class="demoCol" style="background: #49b9ed;color: white">8.33%</div>
-                </g-col>
-                <g-col span="2" offset="2">
-                    <div class="demoCol" style="background: #f5f5f5;color: black">8.33%</div>
-                </g-col>
-                <g-col span="2">
-                    <div class="demoCol" style="background: #49b9ed;color: white">8.33%</div>
-                </g-col>
-                <g-col span="2" offset="2">
-                    <div class="demoCol" style="background: #f5f5f5;color: black">8.33%</div>
-                </g-col>
-                <g-col span="2">
-                    <div class="demoCol" style="background: #49b9ed;color: white">8.33%</div>
-                </g-col>
-                <g-col span="2" offset="2">
-                    <div class="demoCol" style="background: #f5f5f5;color: black">8.33%</div>
-                </g-col>
-            </g-row>
         </div>
         <div class="codeWrapper" @click="show = !show">
             <div class="text">点击展开代码</div>
